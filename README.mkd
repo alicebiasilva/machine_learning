@@ -1,0 +1,59 @@
+# 📘 Machine Learning
+
+Este repositório tem/ como objetivo centralizar **anotações de aula, resumos conceituais e exemplos práticos** relacionados à área de **Machine Learning**. 
+
+* Autora: Alice Beatriz da Silva
+
+* Última atualização: 22/01/2026
+
+---
+
+
+## 📚 Sumário
+
+### 1. Aprendizado Supervisionado
+Estudo de algoritmos que aprendem a partir de dados rotulados, incluindo problemas de **classificação** e **regressão**, métricas de avaliação e boas práticas de modelagem.
+
+### 2. Aprendizado Não Supervisionado
+Exploração de técnicas utilizadas quando não há rótulos nos dados, como **clusterização**, **redução de dimensionalidade** e análise exploratória.
+
+### 3. Aprendizado por Reforço
+Introdução a modelos baseados em interação com o ambiente, abordando conceitos como **agentes**, **estados**, **ações**, **recompensas** e políticas de decisão.
+
+### 4. Sistemas de Recomendação
+Estudo de métodos para recomendação de itens, incluindo **filtragem colaborativa**, **baseada em conteúdo** e abordagens híbridas.
+
+### 5. Machine Learning Avançado
+Tópicos avançados da área, podendo incluir **ensembles**, **deep learning**, **otimização**, **ML em produção (MLOps)** e estudos de caso.
+
+---
+
+<br>
+
+## 🎯 1. Aprendizado Supervisionado
+
+O **Aprendizado Supervisionado** é um dos principais paradigmas do Machine Learning e se baseia no uso de **dados rotulados**, ou seja, exemplos de entrada acompanhados de uma saída conhecida. A partir desses dados, os modelos aprendem padrões que permitem **generalizar** e fazer previsões sobre novos dados.
+
+Esse tipo de aprendizado é amplamente utilizado em aplicações do mundo real, como detecção de spam, diagnóstico médico, previsão de preços, reconhecimento de imagens e análise de risco.
+
+De forma geral, os problemas de aprendizado supervisionado podem ser divididos em duas grandes categorias: *classificação* e *regressão*.
+
+Dentro deste repositório existe uma pasta chamada **"Aprendizado Supervisionado"**. Nela, o conteúdo está organizado da seguinte forma:
+
+### 🔹 Classificação
+Reúne estudos e implementações de algoritmos cujo objetivo é **atribuir uma classe ou rótulo discreto** às observações.  
+Exemplos comuns incluem classificação binária e multiclasse, como:
+- Detecção de spam
+- Classificação de sentimentos
+- Diagnóstico de doenças
+
+### 🔹 Regressão
+Contém estudos e códigos voltados para problemas em que o objetivo é **prever valores contínuos**.  
+Esse tipo de abordagem é muito utilizado em tarefas como:
+- Previsão de preços
+- Estimativa de demanda
+- Análise de tendências
+
+Neles, você encontrará materiais de código de diferentes técnicas de aprendizado supervisionado, conectando teoria e prática por meio de exemplos aplicados.
+
+
