@@ -26,6 +26,8 @@ Estudo de métodos para recomendação de itens, incluindo **filtragem colaborat
 ### 5. Machine Learning Avançado
 Tópicos avançados da área, podendo incluir **ensembles**, **deep learning**, **otimização**, **ML em produção (MLOps)** e estudos de caso.
 
+### 6. Materiais complementares
+
 ---
 
 <br>
@@ -55,5 +57,15 @@ Esse tipo de abordagem é muito utilizado em tarefas como:
 - Análise de tendências
 
 Neles, você encontrará materiais de código de diferentes técnicas de aprendizado supervisionado, conectando teoria e prática por meio de exemplos aplicados.
+
+---
+<br>
+
+
+# 📘 Materiais complementares
+* https://developers.google.com/machine-learning/glossary?hl=pt-br
+* https://medium.com/@rajuhegde2006/aws-sage-maker-cdca68ca7c9b
+* https://www.databricks.com/sites/default/files/2023-03/big-book-of-data-science-2ndedition.pdf
+* https://datatron.com/what-is-a-machine-learning-pipeline/
 
 
