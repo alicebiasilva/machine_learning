@@ -4,43 +4,90 @@ Este repositório tem/ como objetivo centralizar **anotações de aula, resumos 
 
 * Autora: Alice Beatriz da Silva
 
-* Última atualização: 22/01/2026
+* Última atualização: 31/01/2026
 
 ---
 
 
 ## 📚 Sumário
 
-### 1. Aprendizado Supervisionado
+
+### 1. Pré-requisitos: Processamento de Dados e Métricas de Avaliação
+Antes de aprender os algoritmos de Machine Learning, é fundamental dominar etapas de exploração e preparação de dados, bem como as métricas de avaliação. 
+
+### 2. Aprendizado Supervisionado
 Estudo de algoritmos que aprendem a partir de dados rotulados, incluindo problemas de **classificação** e **regressão**, métricas de avaliação e boas práticas de modelagem.
 
-### 2. Aprendizado Não Supervisionado
+### 3. Aprendizado Não Supervisionado
 Exploração de técnicas utilizadas quando não há rótulos nos dados, como **clusterização**, **redução de dimensionalidade** e análise exploratória.
 
-### 3. Aprendizado por Reforço
+### 4. Aprendizado por Reforço
 Introdução a modelos baseados em interação com o ambiente, abordando conceitos como **agentes**, **estados**, **ações**, **recompensas** e políticas de decisão.
 
-### 4. Sistemas de Recomendação
+### 5. Sistemas de Recomendação
 Estudo de métodos para recomendação de itens, incluindo **filtragem colaborativa**, **baseada em conteúdo** e abordagens híbridas.
 
-### 5. Machine Learning Avançado
+### 6. Machine Learning Avançado
 Tópicos avançados da área, podendo incluir **ensembles**, **deep learning**, **otimização**, **ML em produção (MLOps)** e estudos de caso.
 
-### 6. Materiais complementares
+### 7. Materiais complementares
 
 ---
 
 <br>
 
-## 🎯 1. Aprendizado Supervisionado
+## 🎯 1. Pré-requisitos: Processamento de Dados e Métricas de Avaliação
+
+Os materiais práticos se encontram nos arquivos:
+
+    > 1.como manipular_dataframes.ipynb
+    > 2.preparacao_de_dados.ipynb
+    > 3.avaliacao_de_modelos.ipynb
+
+Antes de explorar algoritmos de Machine Learning, é fundamental dominar etapas iniciais de preparação e análise de dados, bem como compreender as principais métricas de avaliação. Esses conceitos são essenciais para garantir que os modelos sejam treinados corretamente e que seus resultados possam ser interpretados de forma confiável.
+
+## 1.1 Processamento de Dados
+É  a fase em que os dados são limpos, transformados e organizados para serem utilizados pelos modelos. Inclui atividades como:
+
+* Tratamento de valores ausentes: remoção ou imputação de dados faltantes.
+* Detecção e remoção de outliers: identificar dados inconsistentes que podem distorcer o modelo.
+* Normalização e padronização: ajustar escalas das variáveis numéricas para melhorar a performance de algoritmos sensíveis a magnitude.
+* Codificação de variáveis categóricas: transformar categorias em representações numéricas (como One-Hot Encoding ou Label Encoding).
+
+## 1.2 Manipulação de DataFrames
+
+O uso de estruturas como o pandas DataFrame é central para organizar e explorar dados. Com DataFrames, é possível:
+
+* Selecionar colunas e linhas específicas.
+* Filtrar e agrupar informações para análise.
+* Criar novas variáveis derivadas.
+* Integrar diferentes fontes de dados de forma eficiente.
+
+## 1.3 Métricas de Avaliação
+
+Para medir a eficácia de um modelo, utilizamos métricas que variam conforme o tipo de problema:
+
+* Classificação: acurácia, precisão, recall, F1-score, matriz de confusão.
+* Regressão: erro médio absoluto (MAE), erro quadrático médio (MSE), raiz do erro quadrático médio (RMSE), erro percentual absoluto médio (MAPE).
+
+Compreender e aplicar essas métricas permite comparar modelos, ajustar hiperparâmetros e interpretar resultados de forma objetiva.
+
+---
+
+<br>
+
+## 🎯 2. Aprendizado Supervisionado
+
+Os materiais práticos se encontram nos arquivos:
+
+    > 4.modelos_de_classificacao.ipynb
+    > 5.modelos_de_regressao.ipynb
 
 O **Aprendizado Supervisionado** é um dos principais paradigmas do Machine Learning e se baseia no uso de **dados rotulados**, ou seja, exemplos de entrada acompanhados de uma saída conhecida. A partir desses dados, os modelos aprendem padrões que permitem **generalizar** e fazer previsões sobre novos dados.
 
 Esse tipo de aprendizado é amplamente utilizado em aplicações do mundo real, como detecção de spam, diagnóstico médico, previsão de preços, reconhecimento de imagens e análise de risco.
 
 De forma geral, os problemas de aprendizado supervisionado podem ser divididos em duas grandes categorias: *classificação* e *regressão*.
-
-Dentro deste repositório existe uma pasta chamada **"Aprendizado Supervisionado"**. Nela, o conteúdo está organizado da seguinte forma:
 
 ### 🔹 Classificação
 Reúne estudos e implementações de algoritmos cujo objetivo é **atribuir uma classe ou rótulo discreto** às observações.  
@@ -56,13 +103,11 @@ Esse tipo de abordagem é muito utilizado em tarefas como:
 - Estimativa de demanda
 - Análise de tendências
 
-Neles, você encontrará materiais de código de diferentes técnicas de aprendizado supervisionado, conectando teoria e prática por meio de exemplos aplicados.
-
 ---
 <br>
 
 
-# 📘 Materiais complementares
+# 📘 7. Materiais complementares
 * https://developers.google.com/machine-learning/glossary?hl=pt-br
 * https://medium.com/@rajuhegde2006/aws-sage-maker-cdca68ca7c9b
 * https://www.databricks.com/sites/default/files/2023-03/big-book-of-data-science-2ndedition.pdf
