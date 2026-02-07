@@ -4,7 +4,7 @@ Este repositório tem/ como objetivo centralizar **anotações de aula, resumos 
 
 * Autora: Alice Beatriz da Silva
 
-* Última atualização: 31/01/2026
+* Última atualização: 07/02/2026
 
 ---
 
@@ -82,6 +82,7 @@ Os materiais práticos se encontram nos arquivos:
 
     > 4.modelos_de_classificacao.ipynb
     > 5.modelos_de_regressao.ipynb
+    > 6.tecnicas_otimizacao_e_fine_tuning.ipynb
 
 O **Aprendizado Supervisionado** é um dos principais paradigmas do Machine Learning e se baseia no uso de **dados rotulados**, ou seja, exemplos de entrada acompanhados de uma saída conhecida. A partir desses dados, os modelos aprendem padrões que permitem **generalizar** e fazer previsões sobre novos dados.
 
@@ -102,6 +103,38 @@ Esse tipo de abordagem é muito utilizado em tarefas como:
 - Previsão de preços
 - Estimativa de demanda
 - Análise de tendências
+
+---
+
+<br>
+
+## 🎯 3. Aprendizado Não Supervisionado
+
+Os materiais práticos se encontram nos arquivos:
+
+    > 7. clusterizacao.ipynb
+    > 8. reducao_de_dimencionalidade.ipynb
+
+O **Aprendizado não supervisionado** é um tipo de técnica de Machine Learning onde o modelo não recebe rótulos ou respostas (ou seja, não há variável alvo) durante o treinamento. Em vez disso, o objetivo é encontrar padrões, estruturas ou relações subjacentes dentro dos dados, como agrupamentos, padrões ou reduções de dimensionalidade.
+
+### **Características:**
+* Sem rótulos: Ao contrário da aprendizagem supervisionada, onde o modelo é treinado com dados rotulados (com a resposta), na aprendizagem não supervisionada, o modelo trabalha com dados não rotulados.
+* Objetivo: O principal objetivo é explorar os dados para descobrir estrutura ou padrões, como agrupamentos ou relações que não são evidentes à primeira vista.
+* Descoberta de padrões: Ao invés de prever um valor, como na supervisão, o modelo tenta encontrar semelhanças ou padrões nos dados, seja agrupando dados ou reduzindo a dimensionalidade para facilitar a visualização e a interpretação.
+
+### **Principais tipos:**
+
+### 🔹 Clustering (Agrupamento):
+Técnica onde os dados são divididos em grupos (ou clusters) baseados em semelhanças. Os pontos de dados dentro de um mesmo grupo são mais semelhantes entre si do que com os pontos de outros grupos. O K-Means é um exemplo clássico, no qual o algoritmo tenta dividir os dados em k clusters com base na similaridade entre eles. O agrupamento é amplamente usado em áreas como segmentação de clientes, onde é possível agrupar consumidores com comportamentos similares, ou em análise genética, para identificar padrões em dados biológicos. Ele também é útil na organização de grandes volumes de dados, categorizando informações de maneira eficiente.
+
+### 🔹 Redução de Dimensionalidade:
+ Tem como objetivo reduzir o número de variáveis ou features de um conjunto de dados, mantendo a maior parte da informação relevante. Um exemplo clássico é o PCA (Principal Component Analysis), que transforma dados de alta dimensionalidade em um conjunto menor, mantendo a maior variância possível. Isso é extremamente útil em visualização de dados complexos, permitindo representar dados em 2D ou 3D, ou em preprocessamento de dados, para tornar outros algoritmos de Machine Learning mais eficientes. 
+
+### 🔹 Análise de Associação:
+ Busca encontrar relações ou padrões frequentes entre itens em grandes bases de dados. O Algoritmo Apriori é um exemplo clássico utilizado, especialmente em problemas de cesta de compras, onde se analisa quais produtos são frequentemente comprados juntos. Isso é particularmente útil em recomendação de produtos em lojas online, sugerindo itens baseados em compras anteriores. 
+
+### 🔹 Modelos de Mistura Gaussiana (GMM):
+ Assumem que os dados são gerados por uma combinação de distribuições gaussianas (ou normais). O GMM é mais flexível que o K-Means, pois permite que os clusters tenham formas elípticas, ao invés de apenas esféricas. Ele é frequentemente utilizado em segmentação de mercado para entender padrões de consumo, ou na detecção de anomalias, identificando dados que fogem do comportamento normal. Além disso, o GMM é utilizado em processamento de voz e análise de sinais, para modelar dados contínuos e complexos, como os encontrados em sinais sonoros ou imagens.
 
 ---
 <br>
