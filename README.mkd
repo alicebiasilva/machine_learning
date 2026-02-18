@@ -114,6 +114,7 @@ Os materiais práticos se encontram nos arquivos:
 
     > 7. clusterizacao.ipynb
     > 8. reducao_de_dimencionalidade.ipynb
+    > 9. PLN_modelagem_de_topicos.ipynb
 
 O **Aprendizado não supervisionado** é um tipo de técnica de Machine Learning onde o modelo não recebe rótulos ou respostas (ou seja, não há variável alvo) durante o treinamento. Em vez disso, o objetivo é encontrar padrões, estruturas ou relações subjacentes dentro dos dados, como agrupamentos, padrões ou reduções de dimensionalidade.
 
@@ -135,6 +136,18 @@ Técnica onde os dados são divididos em grupos (ou clusters) baseados em semelh
 
 ### 🔹 Modelos de Mistura Gaussiana (GMM):
  Assumem que os dados são gerados por uma combinação de distribuições gaussianas (ou normais). O GMM é mais flexível que o K-Means, pois permite que os clusters tenham formas elípticas, ao invés de apenas esféricas. Ele é frequentemente utilizado em segmentação de mercado para entender padrões de consumo, ou na detecção de anomalias, identificando dados que fogem do comportamento normal. Além disso, o GMM é utilizado em processamento de voz e análise de sinais, para modelar dados contínuos e complexos, como os encontrados em sinais sonoros ou imagens.
+
+---
+
+<br>
+
+## 🎯 4. Aprendizado por Reforço
+
+Os materiais práticos se encontram nos arquivos:
+
+    > 10. aprendizado_por_reforco.ipynb
+
+O **Aprendizado por reforço** é um campo da inteligência artificial (IA) onde um agente aprende a tomar decisões interagindo com um ambiente com o objetivo de maximizar uma função de recompensa ao longo do tempo - o agente aprende por tentativa e erro, recebendo feedback (recompensas ou penalidades) com base nas ações que toma, e ajusta suas decisões futuras com base nesse feedback.
 
 ---
 <br>
