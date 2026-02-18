@@ -149,6 +149,19 @@ Os materiais práticos se encontram nos arquivos:
 
 O **Aprendizado por reforço** é um campo da inteligência artificial (IA) onde um agente aprende a tomar decisões interagindo com um ambiente com o objetivo de maximizar uma função de recompensa ao longo do tempo - o agente aprende por tentativa e erro, recebendo feedback (recompensas ou penalidades) com base nas ações que toma, e ajusta suas decisões futuras com base nesse feedback.
 
+### **Principais tipos:**
+
+### 🔹 Valor-based:
+O agente aprende o valor dos estados ou ações, utilizando funções como Q-learning. O objetivo é determinar quais ações são melhores com base em valores numéricos atribuídos a cada estado ou ação, o que permite derivar uma política. Essa abordagem é simples e funciona bem em ambientes discretos, mas não é eficiente para ambientes complexos ou contínuos.
+
+### 🔹 Policy-based:
+
+O agente aprende diretamente uma política, ou seja, uma função que mapeia estados para ações, ajustando-se para maximizar a recompensa. Algoritmos como Policy Gradient fazem isso através da otimização direta da política. Essa abordagem é mais flexível e eficaz em ambientes contínuos ou estocásticos, mas pode ser ineficiente e instável.
+
+### 🔹 Model-based:
+
+O agente tenta aprender ou usar um modelo do ambiente para prever como o ambiente reage às suas ações. O objetivo principal é permitir que o agente planeje suas ações com base em previsões sobre o futuro, em vez de aprender apenas através de tentativas e erros.
+
 ---
 <br>
 
