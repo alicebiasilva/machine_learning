@@ -18,8 +18,7 @@ from typing import List
 import numpy as np
 import pandas as pd
 
-from schemas import Item, ItemClick
-
+from sistemas_de_recomendacao.popularidade.schemas import Item, ItemClick
 
 class Recommender:
     """

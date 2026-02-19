@@ -163,6 +163,37 @@ O agente aprende diretamente uma política, ou seja, uma função que mapeia est
 O agente tenta aprender ou usar um modelo do ambiente para prever como o ambiente reage às suas ações. O objetivo principal é permitir que o agente planeje suas ações com base em previsões sobre o futuro, em vez de aprender apenas através de tentativas e erros.
 
 ---
+
+<br>
+
+## 🎯 5. Sistemas de Recomendação
+
+Os materiais práticos se encontram na pasta *sistemas_de_recomendação*, que está dividida da seguinte forma:
+
+    > comece_aqui.ipynb
+    > popularidade
+    > exploracao_explotacao
+    > matrizes_esparsas
+    > reducao_dimencionalidade
+
+Os códigos desse tema seguem as boas práticas de código, utilizando modularização.
+
+Sistemas de recomendação são programas ou algoritmos projetados para sugerir produtos, serviços ou informações relevantes para usuários com base em seus interesses, comportamento ou perfil. Eles estão por trás de muitas das experiências personalizadas que usamos diariamente.
+
+### 🔹 Recomendação por popularidade:
+
+É uma abordagem simples e direta que sugere itens com base em sua popularidade geral entre todos os usuários. Em vez de analisar preferências individuais, o sistema indica os produtos, filmes ou conteúdos mais acessados, comprados ou avaliados positivamente. Essa estratégia é eficiente para situações em que ainda não há dados sobre o usuário, mas sua principal limitação é a falta de personalização, pois nem todos os usuários se interessam pelos itens mais populares.
+
+**Balanceamento:** Consiste em combinar diferentes objetivos ao gerar sugestões para o usuário. Por exemplo, o sistema pode tentar equilibrar popularidade, novidade, diversidade de categorias ou relevância para o perfil individual. Essa estratégia evita que o usuário veja sempre os mesmos itens ou apenas os mais populares, garantindo uma experiência mais rica e variada, capaz de atender a diferentes interesses e contextos.
+
+**Exploração vs Explotação:** A estratégia de exploração-explotação busca equilibrar a apresentação de itens que o usuário provavelmente vai gostar (explotação do conhecimento existente) com itens novos ou alternativos (exploração). Esse equilíbrio permite que o sistema aprenda sobre os interesses do usuário enquanto ainda entrega recomendações seguras e relevantes. Técnicas como multi-armed bandits são comumente usadas para implementar esse conceito, maximizando engajamento, satisfação e descoberta de novos itens ao mesmo tempo.
+
+---
+<br>
+
+# 📘 6. Machine Learning Avançado
+
+---
 <br>
 
 
