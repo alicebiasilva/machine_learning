@@ -175,10 +175,19 @@ Os materiais práticos se encontram na pasta *sistemas_de_recomendação*, que e
     > exploracao_explotacao
     > matrizes_esparsas
     > reducao_dimencionalidade
+    > agrupamento_vizinhos
+    > funcoes_de_utilidade
+    > engenharia_de_features
 
 Os códigos desse tema seguem as boas práticas de código, utilizando modularização.
 
 Sistemas de recomendação são programas ou algoritmos projetados para sugerir produtos, serviços ou informações relevantes para usuários com base em seus interesses, comportamento ou perfil. Eles estão por trás de muitas das experiências personalizadas que usamos diariamente.
+
+### 🔹 Conceitos importantes:
+
+Em sistemas de recomendação, os dados são frequentemente representados como uma matriz, onde cada linha é um usuário e cada coluna é um item. As células dessa matriz contêm as avaliações dos usuários para os itens. **A matriz é chamada de 'esparsa'** quando a maioria das células está vazia, ou seja, a maioria dos usuários não avaliou todos os itens.
+
+Outro conceito importante é o da **representação vetorial**, já que muitos dos métodos de recomendação (como filtragem colaborativa) dependem da representação vetorial dos usuários e itens. Um vetor é simplesmente uma lista de números que representam as preferências ou características de um item ou usuário. Por exemplo, um filme pode ser representado por um vetor de três números, correspondendo a características como 'ação', 'comédia' e 'drama', com valores representando a intensidade com que o filme possui essas características.
 
 ### 🔹 Recomendação por popularidade:
 
@@ -187,6 +196,30 @@ Sistemas de recomendação são programas ou algoritmos projetados para sugerir 
 **Balanceamento:** Consiste em combinar diferentes objetivos ao gerar sugestões para o usuário. Por exemplo, o sistema pode tentar equilibrar popularidade, novidade, diversidade de categorias ou relevância para o perfil individual. Essa estratégia evita que o usuário veja sempre os mesmos itens ou apenas os mais populares, garantindo uma experiência mais rica e variada, capaz de atender a diferentes interesses e contextos.
 
 **Exploração vs Explotação:** A estratégia de exploração-explotação busca equilibrar a apresentação de itens que o usuário provavelmente vai gostar (explotação do conhecimento existente) com itens novos ou alternativos (exploração). Esse equilíbrio permite que o sistema aprenda sobre os interesses do usuário enquanto ainda entrega recomendações seguras e relevantes. Técnicas como multi-armed bandits são comumente usadas para implementar esse conceito, maximizando engajamento, satisfação e descoberta de novos itens ao mesmo tempo.
+
+### 🔹 Filtragem colaborativa:
+
+É uma técnica amplamente utilizada em sistemas de recomendação para prever os interesses ou preferências de um usuário, com base nas interações de outros usuários semelhantes. O conceito central por trás da filtragem colaborativa é a ideia de que se dois usuários têm um histórico de interações semelhante, é provável que eles gostem das mesmas coisas.
+Existem dois tipos principais de filtragem colaborativa: baseada em usuários (user-based) e baseada em itens (item-based).
+
+Atenção para o problema do *"cold start"*: Se um usuário ou item é novo no sistema e não tem interações suficientes, o sistema terá dificuldades em gerar recomendações precisas. Isso é conhecido como o problema do "início frio" (cold start). Para contornar isso, técnicas como o uso de dados demográficos do usuário ou de características do item (filmes, produtos, etc.) são utilizadas para gerar recomendações iniciais.
+
+**Como Calcular a Similaridade?**
+
+Para calcular a similaridade entre usuários ou itens, alguns métodos comuns incluem:
+
+* Distância de Cosseno: Mede o ângulo entre dois vetores (representações numéricas de interações) e calcula a similaridade entre eles. Quanto menor o ângulo, maior a similaridade.
+* Correlação de Pearson: Mede a relação linear entre duas variáveis. Pode ser usada para medir a similaridade entre dois usuários com base nas classificações que deram aos mesmos itens.
+* Coeficiente de Jaccard: Mede a similaridade entre conjuntos, considerando a razão entre a interseção e a união desses conjuntos. Usado, por exemplo, quando lidamos com interações binárias (como "gostei" ou "não gostei").
+
+### 🔹 Funções de utilidade:
+
+Uma função de utilidade é uma maneira de medir o quanto algo agrada ou satisfaz um usuário. No contexto de sistemas de recomendação, a utilidade é usada para calcular o quão bom é recomendar um item, baseado no que o usuário gosta. Quanto maior a utilidade de um item para um usuário, mais provável ele será recomendado. A utilidade de um item pode ser dada por: 
+
+* **Utilidade Cobb-Douglas**: Um modelo clássico em economia para representar preferências de consumo, no qual a utilidade de um consumidor depende de quantidades consumidas de diferentes bens, com uma forma funcional específica. A utilidade Cobb-Douglas assume que o consumidor tem uma combinação de bens onde o produto das quantidades consumidas, ponderado pelos parâmetros (ou exposições), resulta na utilidade total.
+* **Utilidade de Elasticidade de Substituição Constante (CES)**: Outro tipo de utilidade usado em economia para modelar preferências, onde a elasticidade de substituição entre bens é constante. Nesse modelo, os bens podem ser substituídos entre si a uma taxa constante determinada pela elasticidade
+
+O sistema tenta maximizar a utilidade da recomendação para o usuário, sugerindo itens que ele provavelmente gostará mais.
 
 ---
 <br>
