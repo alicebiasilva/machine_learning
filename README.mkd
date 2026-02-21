@@ -1,10 +1,10 @@
 # 📘 Machine Learning
 
-Este repositório tem/ como objetivo centralizar **anotações de aula, resumos conceituais e exemplos práticos** relacionados à área de **Machine Learning**. 
+Este repositório tem como objetivo centralizar **anotações de aula, resumos conceituais e exemplos práticos** relacionados à área de **Machine Learning**. 
 
 * Autora: Alice Beatriz da Silva
 
-* Última atualização: 07/02/2026
+* Última atualização: 20/02/2026
 
 ---
 
@@ -25,10 +25,10 @@ Exploração de técnicas utilizadas quando não há rótulos nos dados, como **
 Introdução a modelos baseados em interação com o ambiente, abordando conceitos como **agentes**, **estados**, **ações**, **recompensas** e políticas de decisão.
 
 ### 5. Sistemas de Recomendação
-Estudo de métodos para recomendação de itens, incluindo **filtragem colaborativa**, **baseada em conteúdo** e abordagens híbridas.
+Estudo de métodos para recomendação de itens, incluindo **filtragem colaborativa**, **baseada em popularidade** e abordagens híbridas.
 
 ### 6. Machine Learning Avançado
-Tópicos avançados da área, podendo incluir **ensembles**, **deep learning**, **otimização**, **ML em produção (MLOps)** e estudos de caso.
+Tópicos avançados da área que inclui temas como **gradiente descendente**, **validação cruzada**, **bootstrapping**, **curvas de aprendizagem** e estudos de caso.
 
 ### 7. Materiais complementares
 
@@ -226,9 +226,20 @@ O sistema tenta maximizar a utilidade da recomendação para o usuário, sugerin
 
 # 📘 6. Machine Learning Avançado
 
+Os materiais práticos se encontram nos arquivos:
+
+    > 11. gradiente_descendente.ipynb
+    > 12. validacao_cruzada_e_bootstrapping.ipynb
+    > 13. curva_de_aprendizagem_e_overfitting.ipynb
+
+* O **gradiente descendente** é apresentado como um dos principais algoritmos de otimização, utilizado para minimizar a função de erro e encontrar os melhores parâmetros do modelo.
+
+* Técnicas de avaliação como **validação cruzada e bootstrapping** permitem estimar de forma mais confiável o desempenho do modelo em dados não vistos.
+
+* A **curva de aprendizagem** é utilizada para analisar o comportamento do modelo à medida que aumenta a quantidade de dados de treino, ajudando a identificar problemas como overfitting e underfitting e a compreender se o modelo está generalizando adequadamente.
+
 ---
 <br>
-
 
 # 📘 7. Materiais complementares
 * https://developers.google.com/machine-learning/glossary?hl=pt-br
