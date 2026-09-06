@@ -238,3 +238,11 @@ Por isso, normalmente não é necessário aplicar técnicas como normalização 
 ### 20. O que acontece com variáveis altamente correlacionadas?
 
 Quando temos variáveis altamente correlacionadas em uma árvore de decisão, o principal problema não é necessariamente a capacidade preditiva, mas a interpretação da importância das variáveis. Como duas variáveis carregam informações muito semelhantes, a árvore pode escolher uma delas para fazer uma determinada divisão e praticamente não utilizar a outra. Isso faz com que uma variável apareça como muito importante e a outra como pouco importante, mesmo que ambas contenham informações relevantes para prever o target.
+
+---
+
+### 21. Quais as diferenças entre soft voting e hard voting?
+
+Em ensembles de árvores, hard voting e soft voting são formas de combinar as previsões de diferentes árvores ou modelos, sendo mais comuns em problemas de classificação. No hard voting, cada árvore faz uma previsão de classe e a classe final é aquela que recebe a maioria dos votos. Por exemplo, se cinco árvores classificam um cliente como “inadimplente”, “inadimplente”, “adimplente”, “inadimplente” e “adimplente”, a previsão final será “inadimplente”, porque recebeu três dos cinco votos. É uma combinação simples e não considera o grau de confiança de cada árvore.
+
+No soft voting, em vez de considerar apenas a classe prevista, utilizamos as probabilidades estimadas por cada árvore e agregamos essas probabilidades, normalmente por média. Por exemplo, se três árvores estimam probabilidades de inadimplência de 90%, 60% e 55%, a probabilidade combinada seria 68,3%, levando à classificação como inadimplente se o limiar for 50%. Portanto, o soft voting utiliza mais informação do modelo e, quando as probabilidades são bem calibradas, geralmente pode produzir decisões melhores que o hard voting.
