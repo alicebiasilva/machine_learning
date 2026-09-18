@@ -160,3 +160,7 @@ Alterativas:
 * KD-Tree:
 * Ball-Tree:
 * Approximante Nearest Neightbors:
+
+---
+
+### 15. Fale sobre técnicas de tratamento de variáveis categorias, como one-hot-encoding vs embeddings.
