@@ -120,3 +120,43 @@ Depois do pré-processamento, precisamos **escolher hiperparâmetros** como K, m
 ### 10. O modelo faz alguma pré suposição sobre os dados?
 
 O KNN não impõe fortes premissas estatísticas sobre a distribuição dos dados, mas faz uma premissa fundamental de localidade: pontos próximos devem ter respostas semelhantes. A qualidade do modelo depende justamente de essa noção de proximidade ser representativa do problema.
+
+---
+
+### 11. Quais os tipos de voto dos vizinhos?
+
+No KNN, existem três principais formas de definir o voto dos vizinhos:
+
+1. Voto majoritário: cada vizinho tem a mesma importância e vence a classe que aparecer com maior frequência entre os K vizinhos. É simples e funciona bem quando os vizinhos têm distâncias semelhantes.
+2. Voto ponderado pela distância: vizinhos mais próximos recebem mais peso, normalmente usando uma função inversamente proporcional à distância. 
+3. Voto baseado em pesos: pode ser aplicada em classes desbalanceadas por exemplo, para que classes menos frequentes tenham um peso para compensar a falta de representatividade.
+
+---
+
+### 12. Por que a padronização das variáveis é importante e quais os tipos de abordagem?
+
+A padronização é especialmente importante porque o algoritmo calcula a distância enter as observaçoes e, portanto, variáveis em escalas diferentes podem fazer com que uma variável domine o cálculo da distância.
+
+O **MinMaxScaler** transforma os valores entre 0 e 1, sendo interessante quando deseja-se colocar todas as variáveis em uma escala limitada e os dados não possuem outliers.
+
+O **SantandScaler** transforma os dados para terem média 0 e desvio padrão 1, sendo uma boa escolha quando as variáveis têm distribuições aproximadamente simétricas e não apresentam muitos valores extremos.
+
+Já o **RobustScaler** utiliza estatísticas mais resistentes a outliers, como mediana e intervalo interquartil, com o objetivo de mitigar a distorção causada por esses outliers.
+
+---
+
+### 13. Como o algoritmo lida com dados desbalanceados?
+
+---
+
+### 14. Como podemos tornar a inferência do algoritmo mais rápida?
+
+O gargalo do algoritmo é a busca por vizinhos mais próximos. Como KNN é um lazzy learner, ele não "treina" um modelo paramétrico: toda a carga computacional está na fase de predição, quando precisa calcular distâncias enter o ponto de teste e os pontos do dataset.
+
+Na forma mais simples, chamada **brute force**, o KNN calcula a distância do  ponto de teste para todos os pontos de treino. Isso funciona bem para datasets pequenos, mas escala muito mal: o custo cresce lineramente com o número de observações e de dimensões, o que rapidamente torna o modelo inviável na prática.
+
+Alterativas:
+
+* KD-Tree:
+* Ball-Tree:
+* Approximante Nearest Neightbors:
