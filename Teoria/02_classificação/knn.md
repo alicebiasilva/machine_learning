@@ -11,13 +11,17 @@ O parâmetro K controla quanto contexto local usamos para tomar a decisão: um K
 
 ---
 
-### 2. Como o KNN decide a classe ou o valor previsto de uma nova observação?
+### 2. Como o KNN decide a classe ou o valor previsto de uma nova observação e como escolher o melhor K?
 
 O KNN decide a previsão de uma nova observação seguindo basicamente três etapas: calcula as distâncias até as observações do conjunto de treinamento, seleciona os K vizinhos mais próximos e usa esses vizinhos para produzir a previsão. 
 
-Em um problema de classificação, o mecanismo mais simples é o voto majoritário: se K = 5 e, entre os cinco vizinhos mais próximos, três pertencem à classe 1 e dois à classe 0, o modelo prevê classe 1. Também podemos interpretar a proporção de votos como uma estimativa de probabilidade; nesse exemplo, poderíamos dizer que a classe 1 recebeu 60% dos votos. Existem ainda versões em que os vizinhos mais próximos recebem maior peso, fazendo com que um vizinho extremamente próximo tenha mais influência do que outro que esteja no limite dos K selecionados. 
+Em um problema de classificação, o resultado é definido por voto, que pode ser simples ou com pesos e penalizações a depender das premissas do problema. O resultado pode ser a classe ou as probabilidades, e uma abordagem comum é ajustar o corte de probabilidade em um problema com evento raro.
 
-Em um problema de regressão, em vez de votar em uma classe, o KNN combina os valores dos vizinhos, normalmente calculando a média. Essa previsão também pode ser ponderada pela distância. 
+Quando K é um valor par e os vizinhos mais votados forem de classes diferentes, o resultado dependerá da ordm dos dados de treinamento e por isso é uma boa prática adotar K ímpar.
+
+Ainda, em um problema de regressão, em vez de votar em uma classe, o KNN combina os valores dos vizinhos, normalmente calculando a média. Essa previsão também pode ser ponderada pela distância. 
+
+Para escolher o melhor valor de K, um ponto de partida comum e aceito é iniciar pelo valor da raíz de n, (número de amostras), porém não é garantia de melhor desempenho. Na prática, é recomendado testar diferentes valores de K e plotar uma curva relacionando o K com uma métrica de validação, como acurácia, F1-,score ou erro de classificação. A partir dessa curva, pode-se analisar como o desempenho varia conforme K aumenta e escolher um valor que apresente bom desempenho de validação, evitando valores muito baixos, que podem deixar o modelo sensível ao ruído e levar a overfitting, e valores muito altos, que podem deixar as decisões excessivamente generalizadas e levar a underfitting. Idealmente, essa comparação pode ser feita utilizando validação cruzada para que a escolha de K seja mais robusta.
 
 ---
 
@@ -27,9 +31,11 @@ A escolha da métrica de distância no KNN é importante porque ela define o que
 
 A distância **Euclidiana** é a mais conhecida e corresponde à distância em linha reta entre dois pontos; ela funciona bem quando temos variáveis numéricas contínuas e faz sentido considerar diferenças em todas as dimensões de forma conjunta. 
 
-Já a distância **Manhattan** soma as diferenças absolutas entre as coordenadas, sendo mais parecida com percorrer uma cidade seguindo ruas em uma malha; ela pode ser uma alternativa interessante quando queremos **reduzir a influência de diferenças muito grandes em uma determinada dimensão**, embora ainda seja sensível à escala. 
+A distância **Manhattan** soma as diferenças absolutas entre as coordenadas, sendo mais parecida com percorrer uma cidade seguindo ruas em uma malha; ela pode ser uma alternativa interessante quando queremos **reduzir a influência de diferenças muito grandes em uma determinada dimensão**, embora ainda seja sensível à escala. 
 
-Existem outras métricas, como **Minkowski**, que generaliza Euclidiana e Manhattan, e métricas específicas para determinados tipos de dados, como **Hamming** para comparar variáveis binárias ou categóricas codificadas de determinada forma. 
+Já a distância **Minkowski** generaliza Euclidiana e Manhattan. Note que como a fórmula da distância Euclidiana envolve elevar as difereças ao quadrado (distância = raiz[(x1-y1)^2 + (x2-y2)^2], e a distância de Manhattan envolve apenas módulos (distância = |x1-y1| + |x2,y2|), a distância Euclidiana penaliza as diferenças ao quadrado, dando maior importância para elas, e podendo ser mais sensível em presença de outliers.
+
+Por fim, a distância **Hamming** é usada para variáveis categóricas. Em termos simples, ela nos diz se duas variáveis categóricas são iguais ou não, em relação ao número deposições em que os caracteres correspondentes são diferentes (só funciona quando há strings ou arrays de mesmo comprimento).
 
 Um ponto ainda mais importante é que a escolha da distância não pode ser separada do pré-processamento: se uma feature varia de 0 a 1 e outra de 0 a 100.000, a segunda pode dominar completamente a distância Euclidiana ou Manhattan. Por isso, normalmente aplicamos padronização ou outra transformação de escala antes do KNN. 
 
@@ -157,10 +163,34 @@ Na forma mais simples, chamada **brute force**, o KNN calcula a distância do  p
 
 Alterativas:
 
-* KD-Tree:
-* Ball-Tree:
-* Approximante Nearest Neightbors:
+* KD-Tree (k-dimensional tree): divide o espaço em regiões menores para facilitar buscas no processo de encontrar os vizinhos mais próximos de um ponto. Durante a busca, apenas as regiões relevantes são exploradas, eliminando regiões irrelevantes.
+
+* Ball-Tree: organiza os dados em regiões esféricas em vez de cortes alinhados aos eixos (KD-Tree). Isso torna essa abordagem mais flexível em espaços de maior dimensionalidade ou quando as distribuições de dados não se alinham bem aos eixos. Em cenários de alta dimensão, tende a performar melhor que KD-Tree.
+
+* Approximante Nearest Neightbors: abre-se mão de encontrar os k-vizinhos ótimos em troca de uma resposta muito mais rápida, o que é bastante útil em sistemas de recomendação, aplicações em tempo real ou datasets massivos.
 
 ---
 
-### 15. Fale sobre técnicas de tratamento de variáveis categorias, como one-hot-encoding vs embeddings.
+### 15. Fale sobre técnicas de tratamento de variáveis categorias.
+
+Para tratar variáveis categóricas, deve-se escolher a técnica de acordo principalmente com a natureza da variável, a quantidade de categorias e o algoritmo utilizado. 
+
+Para variáveis nominais com poucas categorias, uma abordagem comum é o One-Hot Encoding, que cria uma variável binária para cada categoria e evita estabelecer uma ordem artificial entre elas. 
+
+Para variáveis ordinais, em que existe uma ordem natural entre as categorias, como baixo, médio e alto, pode-se utilizar uma codificação ordinal, atribuindo valores que representem essa ordem. 
+
+Quando temos variáveis categóricas com alta cardinalidade, alternativas como Target Encoding podem ser utilizadas, substituindo cada categoria por uma estatística relacionada à variável alvo, mas é necessário ter cuidado com vazamento de informação e realizar o encoding adequadamente dentro da validação. 
+
+Também existem embeddings, que representam as categorias como vetores numéricos aprendidos, sendo bastante utilizados em modelos de redes neurais e situações com muitas categorias.
+
+---
+
+### 16. Em um problema de classificação com a variável alvo desbalanceada, por exemplo, com 90% das observações pertencendo à classe majoritária e apenas 10% à classe minoritária, quais métricas você utilizaria para avaliar o modelo e como decidiria qual delas é mais adequada ao problema?
+
+Em um problema desbalanceado, eu evitaria utilizar apenas a acurácia, porque ela pode dar uma falsa impressão de bom desempenho. Por exemplo, se 90% dos dados pertencem à classe majoritária, um modelo que sempre previsse essa classe teria 90% de acurácia, mas não identificaria nenhum caso da classe minoritária. Por isso, analisaria a matriz de confusão e métricas como precision, recall e F1-score. Se o objetivo principal for não deixar passar casos da classe minoritária, eu priorizaria o recall, porque ele mede a proporção dos positivos reais que foram identificados pelo modelo. Se for mais importante que os casos classificados como positivos sejam realmente positivos, daria maior atenção à precision. Quando existe um equilíbrio entre precision e recall, utilizaria o F1-score, que é a média harmônica entre os dois. Também poderia analisar a PR-AUC, especialmente quando a classe positiva é muito rara, porque ela permite avaliar o trade-off entre precision e recall em diferentes limiares. Portanto, a escolha da métrica deve estar relacionada ao custo dos diferentes tipos de erro e ao objetivo do problema.
+
+---
+
+### 17. Em um problema de classificação utilizando KNN, você identifica que as classes estão desbalanceadas. Quais técnicas você poderia utilizar para tratar esse desbalanceamento, como undersampling, oversampling e SMOTE, e quais cuidados teria ao aplicar essas técnicas especificamente no KNN?
+
+Em um problema de KNN com classes desbalanceadas, eu poderia utilizar técnicas como undersampling, que reduz a quantidade de observações da classe majoritária, oversampling, que aumenta a representação da classe minoritária, ou SMOTE, que cria novas observações sintéticas da classe minoritária a partir de seus vizinhos. No KNN, esse tratamento é especialmente relevante porque o modelo toma sua decisão com base nos vizinhos mais próximos, então uma classe majoritária muito mais representada pode dominar o voto e prejudicar a identificação da classe minoritária. Por outro lado, o oversampling pode aumentar a influência de observações repetidas e o SMOTE pode criar pontos sintéticos que alteram a distribuição local dos dados, o que é particularmente importante em um algoritmo baseado em distância. Por isso, eu compararia essas estratégias utilizando validação cruzada estratificada e métricas como recall, precision e F1-score, escolhendo a abordagem de acordo com o custo dos erros no problema. Além disso, faria o balanceamento apenas nos dados de treinamento de cada fold, evitando aplicar oversampling ou SMOTE antes da divisão dos dados, pois isso poderia causar vazamento de informação.
