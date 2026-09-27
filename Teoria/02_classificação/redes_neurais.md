@@ -244,3 +244,10 @@ Isso permite que redes profundas aprendam relações muito complexas sem que tod
 ### 22. No deep learning valem os mesmos conceitos? ou existem outras arquiteturas?
 
 Os conceitos fundamentais de redes neurais continuam válidos no Deep Learning, como neurônios, pesos, funções de ativação, forward propagation, backpropagation, função de perda e otimização. A principal diferença é que o Deep Learning utiliza redes com maior profundidade e arquiteturas especializadas para diferentes tipos de dados. Por exemplo, MLPs para dados mais estruturados, CNNs para dados espaciais como imagens, RNNs, LSTMs e GRUs para sequências e Transformers para problemas que utilizam mecanismos de atenção. Portanto, os fundamentos permanecem, mas surgem arquiteturas e componentes específicos para aumentar a capacidade da rede em diferentes problemas.
+
+Por que precisamos de funções de ativação não lineares?
+O que é uma função de perda?
+O que o modelo está tentando otimizar?
+O que caracteriza uma rede neural profunda?
+Como evitar overfitting em redes neurais?
+O que são dropout, batch normalization e early stopping?
