@@ -177,3 +177,23 @@ No One-vs-Rest, treinamos um classificador para cada classe. Por exemplo, se tem
 No One-vs-One, treinamos um classificador para cada par de classes. Com A, B e C, teríamos A contra B, A contra C e B contra C. Na previsão, cada classificador "vota" em uma das duas classes, e a classe que receber mais votos é escolhida.
 
 A diferença principal é que One-vs-Rest utiliza menos modelos, mas cada modelo precisa distinguir uma classe de todas as outras, enquanto One-vs-One utiliza mais modelos, porém cada modelo resolve um problema menor, envolvendo apenas duas classes. Em SVM, essa escolha é importante principalmente por causa do custo computacional, especialmente quando temos muitas classes.
+
+---
+
+### 16. Quais são as principais suposições do SVM?
+
+O SVM não exige uma distribuição estatística específica dos dados; sua principal suposição é geométrica, de que existe uma fronteira de decisão capaz de separar ou distinguir razoavelmente as classes, buscando uma fronteira com boa margem. Na prática, é importante também considerar a escala das variáveis, a presença de outliers e a adequação do kernel escolhido.
+
+---
+
+### 17. Como o algoritmo lida com missings? 
+
+O SVM não lida diretamente com valores ausentes (missings). Em geral, as implementações tradicionais, como SVC do scikit-learn, esperam que todas as variáveis utilizadas no treinamento e na previsão estejam preenchidas. Portanto, é necessário fazer um tratamento dos missings antes de treinar o modelo.
+
+---
+
+### 18. Quais as principais vantagens e desvantagens do algoritmo?
+
+As principais vantagens do SVM são que ele funciona bem em problemas de alta dimensionalidade, consegue encontrar fronteiras de decisão não lineares por meio dos kernels e busca uma fronteira que maximize a margem, o que pode favorecer uma boa generalização. Além disso, ele não exige uma distribuição estatística específica dos dados e costuma funcionar bem mesmo quando temos relativamente poucas observações em relação à quantidade de variáveis. 
+
+Por outro lado, uma das principais desvantagens é o custo computacional quando temos muitas observações, principalmente utilizando kernels não lineares. O SVM também é sensível à escala das variáveis, aos outliers e à escolha dos hiperparâmetros, como C e gamma. Além disso, o resultado pode ser menos interpretável do que modelos mais simples, porque a fronteira de decisão, especialmente com kernels, pode ser difícil de explicar. Ele também não trata missings diretamente, exigindo uma etapa de pré-processamento.
